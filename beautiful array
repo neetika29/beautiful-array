@@ -1,0 +1,26 @@
+from collections import Counter
+t=int(input())
+for z in range(t):
+    n=int(input())
+    li=[int(x) for x in input().split()]
+    ne=0
+    flag=0
+    dic={0:0,1:0,-1:0}
+    for i in li:
+        if i not in dic:
+            ne=ne+1
+            if(ne>1):
+                print("no")
+                flag=1
+                break
+        else:
+            dic[i]+=1
+    if(flag==0):
+        if(ne==1 and dic[-1]>=1):
+            print("no")
+        elif(dic[-1]>1 and dic[1]==0):
+            print("no")
+        else:
+            print("yes")
+    
+        
